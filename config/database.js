@@ -13,6 +13,24 @@
 // });
 
 
+  // // strapi-api/config/database.js
+  // module.exports = ({ env }) => ({
+  //   connection: {
+  //     client: 'postgres',
+  //     connection: {
+  //       host: env('DATABASE_HOST', 'localhost'),
+  //       port: env.int('DATABASE_PORT', 5432),
+  //       database: env('DATABASE_NAME', 'mprew'),
+  //       user: env('DATABASE_USERNAME', 'postgres'),
+  //       password: env('DATABASE_PASSWORD', 'root'),
+  //       schema: env('DATABASE_SCHEMA', 'public'), // Not required
+         
+  //     },
+  //     debug: false,
+  //   },
+  // });
+
+
   // strapi-api/config/database.js
   module.exports = ({ env }) => ({
     connection: {
@@ -23,8 +41,10 @@
         database: env('DATABASE_NAME', 'd5360hs5la7ui'),
         user: env('DATABASE_USERNAME', 'fbjhxifjltliyc'),
         password: env('DATABASE_PASSWORD', '5542fd179be40b270d337a5d4c9e197847c0927d14ea8206601bdab29e3a00f4'),
-        schema: env('DATABASE_SCHEMA', 'public'), // Not required
-         
+        // schema: env('DATABASE_SCHEMA', 'public'), // Not required
+        ssl: {
+          rejectUnauthorized: false
+        }
       },
       debug: false,
     },
